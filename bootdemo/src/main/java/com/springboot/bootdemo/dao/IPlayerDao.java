@@ -2,6 +2,7 @@ package com.springboot.bootdemo.dao;
 
 import com.springboot.bootdemo.domain.Player;
 import org.apache.ibatis.annotations.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,4 +35,8 @@ public interface IPlayerDao extends IDemoDao {
             @Result(property = "teamId",column = "TEAM_ID"),
     })
     public List<Player> selectPlayersByTeamId(int teamId);
+
+
+    @Update("update player set MONEY = #{money} where PLAYER_INDEX = #{playerIndex}")
+    void updatePlayer(@Param("playerIndex") int playerIndex,@Param("money")int money);
 }

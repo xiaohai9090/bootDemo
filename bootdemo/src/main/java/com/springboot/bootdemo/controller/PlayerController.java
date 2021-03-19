@@ -8,7 +8,10 @@ import com.springboot.bootdemo.service.IPlayerService;
 import com.springboot.bootdemo.service.ITeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -45,6 +48,19 @@ public class PlayerController {
         }
     }
 
+    @ResponseBody
+    @RequestMapping("/updatePlayer")
+    public String updatePlayer(int playerIndex,int money){
+        try {
+            playerService.updatePlayer(playerIndex,money);
+
+            return "成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "失败";
+        }
+    }
+
 
     @ResponseBody
     @RequestMapping
@@ -55,8 +71,8 @@ public class PlayerController {
 
 
     @ResponseBody
-    @RequestMapping("/getPlayer")
-    public Player getPlayerByIndex(int playerIndex){
+    @GetMapping("{playerIndex}")
+    public Player getPlayerByIndex(@PathVariable("playerIndex")int playerIndex){
         Player player = playerService.selectPlayerById(playerIndex);
         return player;
     }

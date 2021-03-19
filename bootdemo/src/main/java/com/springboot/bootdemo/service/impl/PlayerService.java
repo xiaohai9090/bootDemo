@@ -47,4 +47,10 @@ public class PlayerService implements IPlayerService {
         return player;
     }
 
+    @Override
+    public void updatePlayer(int playerIndex, int money) {
+        playerDao.updatePlayer(playerIndex,money);
+
+        System.out.println(1 / 0);
+    }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.bootdemo.dao.PayHistoryDao">
+
+	<resultMap id="payHistory" type="com.springboot.bootdemo.domain.PayHistory">
+        <result property="payHistoryId" column="PAY_HISTORY_ID"></result>
+        <result property="daiChongPlayerIndex" column="DAI_CHONG_PLAYER_INDEX"></result>
+        <result property="amount" column="AMOUNT"></result>
+        <result property="orderNo" column="ORDER_NO"></result>
+        <result property="payTime" column="PAY_TIME"></result>
+        <result property="flagAccess" column="FLAG_ACCESS"></result>
+        <result property="state" column="STATE"></result>
+        <result property="buyItemID" column="BUY_ITEM_ID"></result>
+        <result property="transaction_id" column="TRANSACTION_ID"></result>
+        <result property="playerIndex" column="PLAYER_INDEX"></result>
+	</resultMap>
+
+    <select id="showPayHistory" resultMap="payHistory" parameterType="java.util.Map">
+        SELECT * FROM t_pay_history WHERE STATE = 1 AND PAY_TIME >= #{startTime} AND PAY_TIME <![CDATA[ <= ]]> #{endTime} limit #{start},#{size}
+    </select>
+
+    <select id="payHistoryCount" resultType="int" parameterType="java.util.Map">
+        SELECT COUNT(*) FROM t_pay_history WHERE STATE = 1 AND PAY_TIME >= #{startTime} AND PAY_TIME <![CDATA[ <= ]]> #{endTime}
+    </select>
+
+</mapper>

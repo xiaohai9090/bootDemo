@@ -6,27 +6,47 @@ import com.springboot.bootdemo.test.ExtendClass.FatherLei;
 import com.springboot.bootdemo.test.ExtendClass.SonLei;
 import org.apache.mina.core.buffer.IoBuffer;
 import org.springframework.beans.BeanUtils;
+import org.springframework.util.StringUtils;
 
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class test {
 
     public static void main(String[] args) throws IOException {
 
-        BaseObject baseObject = new BaseObject();
-        System.out.println(baseObject.toString());
+    }
 
-        // 1. 获取数据源 和 目标传输地的输入输出流（此处以数据源 = 文件为例）
-//        FileInputStream fin = new FileInputStream("C:\\Users\\Administrator\\Desktop\\aa.txt");
-//        FileOutputStream fout = new FileOutputStream("C:\\Users\\Administrator\\Desktop\\bbb.txt");
+    private void listSwap(){
+        List<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+        list.add(50);
+        list.add(60);
+        list.add(70);
+        list.add(80);
+        list.add(90);
+        list.add(100);
+        list.add(200);
 
-        // 2. 获取数据源的输入输出通道
-//        FileChannel fcin = fin.getChannel();
-//        FileChannel fcout = fout.getChannel();
+        int[] atrs = {40,60,80,50,90,30,20,10,70};
+        for (int i = 0; i < atrs.length; i++){
+            for (int j = 0; j < list.size(); j++){
+                Integer integer = list.get(j);
+                if (integer == atrs[i]){
+                    Collections.swap(list,i,j);
+                }
+            }
+        }
 
+        System.out.println(list);
     }
 
     private void ioDemo() throws IOException {
