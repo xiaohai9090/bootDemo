@@ -1,6 +1,7 @@
 package com.springboot.bootdemo.test;
 
 import com.springboot.bootdemo.domain.BaseObject;
+import com.springboot.bootdemo.domain.Something;
 import com.springboot.bootdemo.domain.Student;
 import com.springboot.bootdemo.test.ExtendClass.FatherLei;
 import com.springboot.bootdemo.test.ExtendClass.SonLei;
@@ -11,14 +12,44 @@ import org.springframework.util.StringUtils;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class test {
 
     public static void main(String[] args) throws IOException {
+        Something something = new Something();
+        something.setId(1);
+        something.setName("东西1");
+        something.setName2("名字123");
+
+        Student stu1 = new Student();
+        stu1.setId(11);
+        stu1.setName("学生1");
+        stu1.setBirthday(new Date());
+
+//        Student stu2 = new Student();
+//        stu2.setId(55);
+//        stu2.setName("学生2号");
+//        stu2.setBirthday(new Date());
+
+
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(stu1);
+//        studentList.add(stu2);
+
+        something.setStudents(studentList);
+
+        Iterator<Student> iterator = something.getStudents().iterator();
+        while (iterator.hasNext()){
+            Student student = iterator.next();
+            if (student.getId() == 11) {
+//                something.clearStudent(student);
+                iterator.remove();
+            }
+        }
+
+        System.out.println(something.toString());
 
     }
 

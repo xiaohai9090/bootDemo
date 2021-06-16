@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import javax.swing.plaf.basic.BasicTreeUI;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Controller
@@ -180,7 +182,6 @@ public class HelloController {
             studentList.add(stu1);
             studentList.add(stu2);
 
-
             something.setStudents(studentList);
 
         }
@@ -215,4 +216,24 @@ public class HelloController {
         }
     }
 
+
+    @GetMapping("/t1")
+    public void t1(@RequestParam("id") String id) {
+        System.out.println("t1" + id);
+    }
+
+    @GetMapping("/t2")
+    public void t2(@Value("id") String id) {
+        System.out.println("t2" + id);
+    }
+
+    @GetMapping("/t3")
+    public void t3(@RequestBody String id) {
+        System.out.println("t3" + id);
+    }
+
+    @GetMapping("/t4")
+    public void t4(int id) {
+        System.out.println("t4" + id);
+    }
 }

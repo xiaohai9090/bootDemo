@@ -48,4 +48,8 @@ public class Something {
     public String toString() {
         return JSON.toJSONString(this);
     }
+
+    public void clearStudent(Student student){
+        students.remove(student);
+    }
 }
