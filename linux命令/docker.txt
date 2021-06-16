@@ -1,0 +1,20 @@
+docker images   // 查看所有镜像
+docker run // 创建一个新的容器并运行一个命令
+	-d :后台运行，并返回ID
+	-P :随机端口
+	-p :指定端口，格式：主机端口:容器端口
+	
+
+docker ps   // 查看运行中的容器
+
+docker stop [容器ID]  停止容器
+docker start [容器ID]
+docker restart
+docker kill
+docker rm [容器ID]  删除已经停止的容器
+docker exec -it 容器ID   // 进入容器
+exit 退出容器
+
+
+docker run -itd --name Queen-sql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql  // 运行mysql
+docker exec -it Queen-sql bash   // 进入mysql容器

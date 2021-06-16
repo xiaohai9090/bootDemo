@@ -1,0 +1,5 @@
+进入tomcat安装目录./bin下
+./startup.sh  启动tomcat
+./shutdown.sh  关闭tomcat
+
+ps -ef|grep tomcat   查看tomcat是否在运行
