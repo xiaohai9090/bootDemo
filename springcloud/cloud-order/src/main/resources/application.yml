@@ -1,0 +1,14 @@
+#设置应用名称
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: cloud-order
+  cloud:
+      nacos:
+        discovery:
+          server-addr: localhost:8848
+
+#端口号
+server:
+  port: 8604

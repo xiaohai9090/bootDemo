@@ -6,16 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="cloud-db" />
+        <module name="cloud-login" />
+        <module name="cloud-order" />
         <module name="coumster" />
         <module name="eureka-client" />
         <module name="eureka-server" />
-        <module name="springcloud" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="cloud-db" target="1.8" />
+      <module name="cloud-login" target="1.8" />
+      <module name="cloud-order" target="1.8" />
+      <module name="common" target="1.8" />
       <module name="coumster" target="1.8" />
       <module name="eureka-client" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="gateway" target="1.8" />
       <module name="springcloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>
