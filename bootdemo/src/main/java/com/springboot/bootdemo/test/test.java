@@ -1,6 +1,7 @@
 package com.springboot.bootdemo.test;
 
 import com.springboot.bootdemo.domain.BaseObject;
+import com.springboot.bootdemo.domain.Something;
 import com.springboot.bootdemo.domain.Student;
 import com.springboot.bootdemo.test.ExtendClass.FatherLei;
 import com.springboot.bootdemo.test.ExtendClass.SonLei;
@@ -20,7 +21,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Collectors;
 
 public class test {
-
 
     static Map<Integer, String> statsicMap = new HashMap<>();
 

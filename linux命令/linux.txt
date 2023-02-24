@@ -1,0 +1,10 @@
+mkdir 创建文件夹
+mkdir -p  递归创建文件夹  # mkdir -p xx/yy
+
+挂载命令格式: mount [-t vfstype] [-o options] device dir
+1.[-t vfstype] 指定文件系统的类型，通常不必指定，mount 会自动选择正确的类型
+2.[-o options] 主要用来描述设备或档案的挂接方式
+3.device 要挂载的设备
+4.dir 设备在系统上的挂接点
+
+mount -l  查看已挂载设备
