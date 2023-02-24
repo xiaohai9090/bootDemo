@@ -27,9 +27,10 @@ public class GameSocketHandle extends IoHandlerAdapter {
         }
         //向客户端发送消息，会调用messageSent
 //        session.write("回复消息：" + message);
-        if (msgRec != null) {
-            msgRec.receiveMsg((MessageMsg) message);
-        }
+        System.out.println("messageReceived");
+//        if (msgRec != null) {
+//            msgRec.receiveMsg((MessageMsg) message);
+//        }
     }
 
     @Override
@@ -39,22 +40,22 @@ public class GameSocketHandle extends IoHandlerAdapter {
 
     @Override
     public void sessionClosed(IoSession session) throws Exception {
-        super.sessionClosed(session);
+        System.out.println("sessionClosed");
     }
 
     @Override
     public void sessionCreated(IoSession session) throws Exception {
-        super.sessionCreated(session);
+        System.out.println("sessionCreated");
     }
 
     @Override
     public void sessionOpened(IoSession session) throws Exception {
-        super.sessionOpened(session);
+        System.out.println("sessionOpened");
     }
 
     @Override
     public void sessionIdle(IoSession session, IdleStatus status) throws Exception {
-        super.sessionIdle(session, status);
+        System.out.println("sessionIdle");
     }
 
     public void setMsgRec(IMsgReceiver msgRec) {

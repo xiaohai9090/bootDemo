@@ -9,20 +9,42 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.*;
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Collectors;
 
 public class test {
 
-    public static void main(String[] args) throws IOException {
+
+    static Map<Integer, String> statsicMap = new HashMap<>();
+
+    Student student = new Student();
+    public static void main(String[] args) {
 
     }
 
-    private void listSwap(){
+    public void go(int run) throws Exception {
+        synchronized (student) {
+            if (run == 0) {
+                this.wait();
+            } else if (run == 1) {
+                this.notify();
+            }
+
+            System.out.println("over");
+        }
+    }
+
+
+
+
+    private static void listSwap(){
         List<Integer> list = new ArrayList<>();
         list.add(10);
         list.add(20);
@@ -46,7 +68,9 @@ public class test {
             }
         }
 
+
         System.out.println(list);
+
     }
 
     private void ioDemo() throws IOException {
@@ -140,7 +164,7 @@ public class test {
         System.out.println(student.getName());
     }
 
-    private void timeRun(){
+    private static void timeRun(){
         int i = 499 % 500;
         System.out.println(i);
 
@@ -148,5 +172,7 @@ public class test {
         run();
         long b = System.nanoTime();
         System.out.println(b-a);
+
+
     }
 }
