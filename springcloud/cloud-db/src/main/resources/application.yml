@@ -35,6 +35,7 @@ dubbo:
     address: nacos://127.0.0.1:8848
   scan:
     base-packages: com.hai.springcloud.service
-
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
 
 

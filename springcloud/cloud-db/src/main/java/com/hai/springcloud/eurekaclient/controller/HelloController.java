@@ -15,6 +15,7 @@ public class HelloController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
     private PlayerMapper playerMapper;
 
     @Value("${server.port}")

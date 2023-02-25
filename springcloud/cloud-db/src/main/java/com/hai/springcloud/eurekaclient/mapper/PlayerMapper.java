@@ -2,10 +2,11 @@ package com.hai.springcloud.eurekaclient.mapper;
 
 import com.hai.springcloud.domain.Player;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
+@Repository
 public interface PlayerMapper {
 
     public void addPlayer(Player player);

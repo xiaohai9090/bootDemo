@@ -2,18 +2,23 @@
 spring:
   #设置应用名称
   application:
-    name: coumster
+    name: nacos-coumster
+  profiles:
+    active: dev
   cloud:
       nacos:
         discovery:
+          server-addr: localhost:8848
+        config:
+          file-extension: yaml
           server-addr: localhost:8848
 
 #端口号
 server:
   port: 8602
 
-service-url:
-  nacos-coumster-service: http://localhost
+#service-url:
+#  nacos-coumster-service: http://localhost
 dubbo:
   registry:
       address: nacos://127.0.0.1:8848

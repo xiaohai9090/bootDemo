@@ -1,5 +1,6 @@
 package com.hai.springcloud.coumster.controller;
 
+import com.hai.springcloud.domain.Player;
 import com.hai.springcloud.service.PlayerService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.Method;
@@ -26,17 +27,21 @@ public class PlayerController {
      * retries = 3,   //远程服务调用重试次数，不包括第一次调用，不需要重试请设为0
      * methods = @Method(name = "dubboT") //精确到服务接口的某个方法
      */
-    @DubboReference(interfaceClass = PlayerService.class, version = "1.0.0")
+    @DubboReference(interfaceClass = PlayerService.class,
+            version = "1.0.0",
+            group = "com.hai.springcloud.service.PlayerService", timeout = 3000)
     private PlayerService playerService;
 
 
-    @Value("${service-url.nacos-coumster-service}")
+    @Value("${config.serviceUrl}")
     private String serviceUrl;
 
 
     @GetMapping("/coumster/{id}")
     public String getPlayer(@PathVariable("id")int id){
-        return restTemplate.getForObject(serviceUrl + "/payment/" + id,String.class);
+        Player player = playerService.selectPlayerById(id);
+        return player.getPlayerName();
+//        return restTemplate.getForObject(serviceUrl + "/payment/" + id,String.class);
     }
 
     @GetMapping("/dubboT")

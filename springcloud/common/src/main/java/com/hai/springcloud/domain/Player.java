@@ -2,23 +2,38 @@ package com.hai.springcloud.domain;
 
 import java.util.Date;
 
-public class Player {
+public class Player extends BaseObject {
 
-    private int playerId;
+    /**
+     * 玩家ID
+     */
     private int playerIndex;
+
+    /**
+     * 玩家昵称
+     */
     private String playerName;
+
+    /**
+     * 登陆时间
+     */
     private Date loginTime;
+
+    /**
+     * 区域ID
+     */
     private int areaId;
+
+    /**
+     * 余额
+     */
     private int money;
     private int teamId;
 
-    public int getPlayerId() {
-        return playerId;
-    }
-
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
-    }
+    /**
+     * 密码
+     */
+    private String password;
 
     public int getPlayerIndex() {
         return playerIndex;
@@ -66,5 +81,26 @@ public class Player {
 
     public void setTeamId(int teamId) {
         this.teamId = teamId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "playerIndex=" + playerIndex +
+                ", playerName='" + playerName + '\'' +
+                ", loginTime=" + loginTime +
+                ", areaId=" + areaId +
+                ", money=" + money +
+                ", teamId=" + teamId +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

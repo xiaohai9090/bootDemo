@@ -7,7 +7,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@DubboService(interfaceClass = PlayerService.class, version = "1.0.0")
+@DubboService(interfaceClass = PlayerService.class, version = "1.0.0", group = "com.hai.springcloud.service.PlayerService")
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
