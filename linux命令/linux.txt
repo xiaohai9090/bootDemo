@@ -1,5 +1,27 @@
+linux常用命令
 mkdir 创建文件夹
 mkdir -p  递归创建文件夹  # mkdir -p xx/yy
+
+ls 查看当前目录下的所有文件和文件夹
+ls -lh 查看当前目录下的所有文件和文件夹的权限等信息
+ls -a 看所有文件可看到隐藏文件
+ls -i 显示incode
+
+
+cd [目录] 切换目录
+cd - 进上级目录
+cd .. 进上上级
+cd . 当前目录
+
+rmdir 删除空白目录
+rm -r 删除目录
+rm -rf [目录] 强制删除
+cp -r [原文件] [目标文件] 复制文件
+cp -p
+cp -d
+cp -a 复制文件
+
+mv 剪切，如果在同一目录则是改名
 
 挂载命令格式: mount [-t vfstype] [-o options] device dir
 1.[-t vfstype] 指定文件系统的类型，通常不必指定，mount 会自动选择正确的类型

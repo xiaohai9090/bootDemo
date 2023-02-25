@@ -1,0 +1,22 @@
+npm 安装
+
+npm install nrm -g   全局安装nrm
+
+nrm use taobao    使用淘宝镜像，更快
+
+npm init -y 当前目录初始化
+
+{
+  "name": "ES6_vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+npm install vue --save  当前项目下安装vue
