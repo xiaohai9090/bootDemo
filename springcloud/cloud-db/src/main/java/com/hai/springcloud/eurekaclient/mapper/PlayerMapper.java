@@ -9,12 +9,13 @@ import java.util.List;
 @Repository
 public interface PlayerMapper {
 
-    public void addPlayer(Player player);
+    void addPlayer(Player player);
 
+    List<Player> selectPlayer();
 
-    public List<Player> selectPlayer();
+    Player selectPlayerById(int playerIndex);
 
-    public Player selectPlayerById(int playerIndex);
+    List<Player> selectPlayersByTeamId(int teamId);
 
-    public List<Player> selectPlayersByTeamId(int teamId);
+    void updatePlayerInfo(Player player);
 }

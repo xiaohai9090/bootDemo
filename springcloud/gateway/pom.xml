@@ -38,6 +38,11 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.hai.spring-cloud</groupId>
+            <artifactId>api</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 

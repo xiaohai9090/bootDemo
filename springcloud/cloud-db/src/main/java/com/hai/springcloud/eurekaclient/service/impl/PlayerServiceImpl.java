@@ -20,6 +20,16 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public void addPlayer(Player player) {
+        playerMapper.addPlayer(player);
+    }
+
+    @Override
+    public void updatePlayerInfo(Player player) {
+        playerMapper.updatePlayerInfo(player);
+    }
+
+    @Override
     public String providerTest() {
         System.out.println("success.............");
         return "hello dubbo!";

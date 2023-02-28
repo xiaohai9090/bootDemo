@@ -17,4 +17,15 @@
     <select id="selectPlayerById" parameterType="int" resultMap="Player">
         SELECT * FROM player WHERE player_index = #{playerIndex}
     </select>
+
+
+    <insert id="addPlayer" parameterType="Player">
+        INSERT INTO player (PLAYER_INDEX,PLAYER_NAME,LOGIN_TIME,AREA_ID,MONEY,TEAM_ID,PASSWORD)
+        VALUE (#{playerIndex},#{playerName},#{loginTime},#{areaId},#{money},#{teamId},#{password})
+    </insert>
+
+
+    <update id="updatePlayer" parameterType="Player">
+        UPDATE player SET PLAYER_NAME = #{playerName}, LOGIN_TIME = #{loginTime}, AREA_ID = {areaId},MONEY=#{money},TEAM_ID=#{teamId},PASSWORD=#{password}
+    </update>
 </mapper>

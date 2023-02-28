@@ -6,5 +6,11 @@ public interface PlayerService {
 
     public Player selectPlayerById(int playerIndex);
 
+
+    void addPlayer(Player player);
+
     String providerTest();
+
+
+    void updatePlayerInfo(Player player);
 }

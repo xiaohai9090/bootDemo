@@ -1,6 +1,7 @@
 package com.hai.springcloud.coumster.controller;
 
 import com.hai.springcloud.domain.Player;
+import com.hai.springcloud.redis.RedisCache;
 import com.hai.springcloud.service.PlayerService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.Method;
@@ -16,8 +17,6 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/Hello")
 public class PlayerController {
 
-    @Autowired
-    private RestTemplate restTemplate;
 
     /**
      * interfaceClass = PlayerService.class,   //服务接口名

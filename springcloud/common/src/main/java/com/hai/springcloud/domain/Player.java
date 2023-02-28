@@ -35,6 +35,8 @@ public class Player extends BaseObject {
      */
     private String password;
 
+
+
     public int getPlayerIndex() {
         return playerIndex;
     }
