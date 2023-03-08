@@ -16,10 +16,17 @@ spring:
       config:
         file-extension: yaml
         server-addr: 192.168.10.128:8848
+  rabbitmq:
+    host: 192.168.10.128
+    port: 5672
+    username: admin
+    password: 123456
 
 #端口号
 server:
   port: 8601
+
+# dubbo配置
 dubbo:
   protocol:
     port: 20881
@@ -28,6 +35,8 @@ dubbo:
     address: nacos://192.168.10.128:8848
   scan:
     base-packages: com.hai.springcloud.service
+
+# mybatis配置
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.hai.springcloud.domain

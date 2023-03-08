@@ -2,6 +2,7 @@ package com.hai.springcloud.eurekaclient.controller;
 
 import com.hai.springcloud.domain.Player;
 import com.hai.springcloud.eurekaclient.mapper.PlayerMapper;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,9 @@ public class HelloController {
 
     @Autowired
     private PlayerMapper playerMapper;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Value("${server.port}")
     private String port;

@@ -28,7 +28,7 @@ public class PlayerController {
      */
     @DubboReference(interfaceClass = PlayerService.class,
             version = "1.0.0",
-            group = "com.hai.springcloud.service.PlayerService", timeout = 3000)
+            group = "com.hai.springcloud.service.PlayerService", timeout = 3000, check = false)
     private PlayerService playerService;
 
 

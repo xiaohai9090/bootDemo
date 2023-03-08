@@ -26,7 +26,7 @@ spring:
           predicates:
             - Path=/login/**
   redis:
-    host: localhost
+    host: 192.168.10.128
     port: 6379
     password:
     timeout: 10s

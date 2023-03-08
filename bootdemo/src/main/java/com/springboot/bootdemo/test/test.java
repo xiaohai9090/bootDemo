@@ -1,8 +1,11 @@
 package com.springboot.bootdemo.test;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.bootdemo.domain.BaseObject;
 import com.springboot.bootdemo.domain.Something;
 import com.springboot.bootdemo.domain.Student;
+import com.springboot.bootdemo.msg.MemberMsg;
+import com.springboot.bootdemo.msg.NetMsgBase;
 import com.springboot.bootdemo.test.ExtendClass.FatherLei;
 import com.springboot.bootdemo.test.ExtendClass.SonLei;
 import org.apache.mina.core.buffer.IoBuffer;
@@ -26,7 +29,14 @@ public class test {
 
     Student student = new Student();
     public static void main(String[] args) {
+        MemberMsg memberMsg = new MemberMsg();
+        memberMsg.setPlayerIndex(123);
+        memberMsg.setName("三三");
+        String s = JSON.toJSONString(memberMsg);
 
+
+        NetMsgBase msg = JSON.parseObject(s, NetMsgBase.class);
+        System.out.println(msg);
     }
 
     public void go(int run) throws Exception {

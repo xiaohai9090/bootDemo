@@ -1,7 +1,5 @@
 package com.hai.springcloud.utils;
 
-import com.ruoyi.common.exception.UtilException;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
